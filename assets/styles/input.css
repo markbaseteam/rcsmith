@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'Lato', 'Inter', sans-serif;
+    color: white;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.linkPopup {
+    z-index: 999;
+    position: absolute;
+    width: 20em;
+    max-height: 20em;
+    overflow: hidden;
+    visibility: visible;
+    background-color: rgb(30, 30, 33);
+    padding: 1em;
+    border: 0.5px solid rgb(82, 82, 82);
+    border-radius: 5px;
+    transform: translate(-50%, 10%);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    box-shadow: 6px 6px 36px 0px rgba(0, 0, 0, 0.25);
+    pointer-events: none;
+    user-select: none;
+}
+
+.linkPopup.hidden {
+    opacity: 0;
+    transform: translate(-50%, 20%);
+    display: inline-block;
+    animation: dropin 0.2s ease;
+    
+}
+
+.highlight {
+    background-color: #ffd84d;
+    color:rgb(30, 30, 33);
+}
+
+@media only screen and (max-width: 600px) {
+    .linkPopup {
+        display: none;
+    }
+}
